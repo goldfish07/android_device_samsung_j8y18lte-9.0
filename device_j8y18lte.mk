@@ -129,6 +129,12 @@ PRODUCT_PACKAGES += \
     libqcompostprocbundle \
     tinymix
 
+# ANT
+PRODUCT_PACKAGES += \
+    AntHalService \
+    com.dsi.ant.antradio_library \
+    libantradio
+
 # RIL
 PRODUCT_PACKAGES += \
     librmnetctl \
