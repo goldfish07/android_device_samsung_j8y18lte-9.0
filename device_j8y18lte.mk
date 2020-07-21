@@ -9,6 +9,18 @@ DEVICE_PACKAGE_OVERLAYS += device/samsung/j8y18lte/overlay
 
 
 
+# Ramdisk
+PRODUCT_PACKAGES += \
+    fstab.qcom \
+    init.carrier.rc \
+    init.msm.usb.configfs.rc \
+    init.qcom.factory.rc \
+    init.qcom.rc \
+    init.qcom.test.rc \
+    init.qcom.usb.rc \
+    init.target.rc \
+    ueventd.qcom.rc 
+
 $(call inherit-product, build/target/product/full.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
