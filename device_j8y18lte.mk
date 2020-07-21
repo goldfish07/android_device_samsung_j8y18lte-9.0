@@ -297,6 +297,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service
 
+PRODUCT_ENFORCE_RRO_TARGETS := \
+    Bluetooth \
+    Settings \
+    SettingsProvider \
+    SystemUI \
+    framework-res \
+
 $(call inherit-product, build/target/product/full.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
