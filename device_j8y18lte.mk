@@ -5,9 +5,12 @@ $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
 $(call inherit-product-if-exists, vendor/samsung/j8y18lte/j8y18lte-vendor.mk)
 
-DEVICE_PACKAGE_OVERLAYS += device/samsung/j8y18lte/overlay
 
 DEVICE_PATH := device/samsung/j8y18lte
+
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += $(DEVICE_PATH)/overlay
+DEVICE_PACKAGE_OVERLAYS += $(DEVICE_PATH)/overlay-lineage
 
 # Display density
 PRODUCT_AAPT_CONFIG := normal
@@ -296,6 +299,7 @@ PRODUCT_PACKAGES += \
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service
+
 
 PRODUCT_ENFORCE_RRO_TARGETS := \
     Bluetooth \
