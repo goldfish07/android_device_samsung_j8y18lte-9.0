@@ -3,18 +3,22 @@ USE_CAMERA_STUB := true
 # inherit from the proprietary version
 -include vendor/samsung/j8y18lte/BoardConfigVendor.mk
 
+# Architecture
 TARGET_ARCH := arm
 TARGET_NO_BOOTLOADER := true
 TARGET_BOARD_PLATFORM := msm8953
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_ARCH_VARIANT := armv7-a-neon
-TARGET_CPU_VARIANT := cortex-a7
+TARGET_CPU_VARIANT := cortex-a53
 TARGET_CPU_SMP := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
 
 TARGET_BOOTLOADER_BOARD_NAME := MSM8953
 
+
+TARGET_BOARD_SUFFIX := _64
+TARGET_USES_64_BIT_BINDER := true
 
 # Kernel
 TARGET_KERNEL_ARCH := arm64
