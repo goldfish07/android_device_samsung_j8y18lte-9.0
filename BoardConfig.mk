@@ -2,7 +2,7 @@ USE_CAMERA_STUB := true
 
 # inherit from the proprietary version
 -include vendor/samsung/j8y18lte/BoardConfigVendor.mk
-
+DEVICE_PATH := device/samsung/j8y18lte
 # Architecture
 TARGET_ARCH := arm
 TARGET_NO_BOOTLOADER := true
@@ -50,3 +50,9 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 
 
 BOARD_HAS_NO_SELECT_BUTTON := true
+
+# Bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
+BOARD_HAVE_BLUETOOTH := true
+BOARD_HAVE_BLUETOOTH_QCOM := true
+BLUETOOTH_HCI_USE_MCT := true
