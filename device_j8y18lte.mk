@@ -285,6 +285,9 @@ PRODUCT_PACKAGES += \
     wpa_supplicant.conf
 
 
+# USB
+PRODUCT_PACKAGES += \
+    android.hardware.usb@1.0-service
 
 $(call inherit-product, build/target/product/full.mk)
 
