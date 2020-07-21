@@ -194,6 +194,16 @@ PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl \
     android.hardware.gatekeeper@1.0-service
 
+
+# GPS
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@1.0-impl-qti \
+    gps.msm8953 \
+    libcurl \
+    libgnss \
+    libgnsspps
+
+
 $(call inherit-product, build/target/product/full.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
