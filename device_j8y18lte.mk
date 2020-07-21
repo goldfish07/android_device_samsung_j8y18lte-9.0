@@ -39,6 +39,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
 
+# Thermal
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/thermal/thermal-engine.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine.conf
+
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -279,6 +283,8 @@ PRODUCT_PACKAGES += \
     wificond \
     wpa_supplicant \
     wpa_supplicant.conf
+
+
 
 $(call inherit-product, build/target/product/full.mk)
 
