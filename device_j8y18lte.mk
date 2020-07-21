@@ -129,6 +129,16 @@ PRODUCT_PACKAGES += \
     libqcompostprocbundle \
     tinymix
 
+# RIL
+PRODUCT_PACKAGES += \
+    librmnetctl \
+    libcnefeatureconfig \
+    libxml2 \
+    telephony-ext
+
+PRODUCT_BOOT_JARS += \
+    telephony-ext
+
 
 # Bluetooth
 PRODUCT_PACKAGES += \
