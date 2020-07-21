@@ -184,7 +184,10 @@ PRODUCT_PACKAGES += \
     ethertypes \
     libebtc
 
-
+# FM
+PRODUCT_PACKAGES += \
+    FMRadio \
+    libfmjni
 
 $(call inherit-product, build/target/product/full.mk)
 
