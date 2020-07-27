@@ -131,6 +131,9 @@ TARGET_RECOVERY_DEVICE_MODULES := libinit_msm8953
 BOARD_HARDWARE_CLASS += \
     $(DEVICE_PATH)/lineagehw
 
+# charger
+WITH_LINEAGE_CHARGER := false
+
 # Keymaster
 TARGET_PROVIDES_KEYMASTER := true
 
