@@ -446,11 +446,6 @@ on post-fs-data
 	chmod 0770 /persist/coresight/qdss.config.sh
 	chmod 0770 /persist/coresight/qdss.functions.sh
 
-service nqnfcinfo /system/vendor/bin/nqnfcinfo
-    class late_start
-    group nfc
-    user system
-    oneshot
 
 service iop /system/vendor/bin/iop
     class main
