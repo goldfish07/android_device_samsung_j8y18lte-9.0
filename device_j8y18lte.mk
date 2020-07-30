@@ -343,9 +343,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.sys.sdcardfs=false
 
-# fstab
-PRODUCT_PACKAGES += \
-	libfs_mgr
 
 # For userdebug builds
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
