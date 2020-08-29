@@ -147,7 +147,8 @@ PRODUCT_PACKAGES += \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     libqcompostprocbundle \
-    tinymix
+    tinymix \
+    libaudioroute
 
 # ANT
 PRODUCT_PACKAGES += \
