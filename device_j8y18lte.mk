@@ -235,7 +235,7 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
-    vendor.samsung.hardware.gnss@1.0-service \
+    android.hardware.gnss@1.0-impl \
     gps.msm8953 \
     libcurl \
     libgnss \
