@@ -306,6 +306,10 @@ PRODUCT_PACKAGES += \
     charger_res_images \
     libion
 
+# Lights
+PRODUCT_PACKAGES += \
+	android.hardware.light@2.0-impl
+
 # Wifi
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
