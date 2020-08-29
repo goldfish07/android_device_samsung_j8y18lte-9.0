@@ -2,6 +2,7 @@
 # system.prop for j8y18lte
 #
 
+ro.sf.lcd_density=560
 
 ro.adb.secure=0
 ro.oem_unlock_supported=true
