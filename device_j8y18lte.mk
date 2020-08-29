@@ -160,11 +160,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     librmnetctl \
     libcnefeatureconfig \
-    libxml2 \
-    telephony-ext
-
-PRODUCT_BOOT_JARS += \
-    telephony-ext
+    libxml2 
 
 
 # Sensors
