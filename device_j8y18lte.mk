@@ -226,10 +226,6 @@ PRODUCT_PACKAGES += \
     ethertypes \
     libebtc
 
-# FM
-PRODUCT_PACKAGES += \
-    FMRadio \
-    libfmjni
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
