@@ -301,7 +301,8 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-	android.hardware.light@2.0-impl
+	android.hardware.light@2.0-impl \
+    lights.msm8953.so
 
 # Wifi
 PRODUCT_PACKAGES += \
