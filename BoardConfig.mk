@@ -162,8 +162,6 @@ TARGET_USE_SDCLANG := true
 
 # RIL
 BOARD_RIL_CLASS := $(DEVICE_PATH)/ril
-TARGET_LD_SHIM_LIBS := \
-	/vendor/lib/libsec-ril.so
 TARGET_RIL_VARIANT := caf
 
 
