@@ -360,9 +360,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # GC Tweaks 
 PRODUCT_TAGS += dalvik.gc.type-precise
 
-# System Prop
-include $(DEVICE_PATH)/prop.mk
-
 $(call inherit-product, build/target/product/full.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
