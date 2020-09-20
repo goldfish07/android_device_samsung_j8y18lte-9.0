@@ -205,7 +205,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     librmnetctl \
     libcnefeatureconfig \
-    libxml2 
+    libxml2  \
+    libril
 
 
 # Sensors
@@ -294,6 +295,49 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/gps/sap.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sap.conf \
     $(DEVICE_PATH)/configs/gps/xtwifi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/xtwifi.conf
 
+
+###
+# Radio
+###
+# Connectivity Engine support
+PRODUCT_PACKAGES += \
+    libcnefeatureconfig
+
+# IPA Manager
+PRODUCT_PACKAGES += \
+    ipacm \
+    IPACM_cfg.xml
+
+# IPv6
+PRODUCT_PACKAGES += \
+    ebtables \
+    ethertypes \
+    libebtc
+
+# Misc
+PRODUCT_PACKAGES += \
+    curl \
+    libbson \
+    libcurl \
+    librmnetctl \
+    rmnetcli \
+    libxml2 \
+    libtinyxml
+
+# Protobuf
+PRODUCT_PACKAGES += \
+    libprotobuf-cpp-full
+
+# Samsung
+PRODUCT_PACKAGES += \
+    libsecnativefeature \
+    libsecril-client
+
+# Shim
+PRODUCT_PACKAGES += \
+    libsec-ims_shim
+
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0-service-qti
@@ -351,14 +395,12 @@ PRODUCT_PACKAGES += \
 # Wifi
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
-    libwifi-hal-qcom \
-    macloader \
-    libcld80211 \
-    libqsap_sdk \
-    libQWiFiSoftApCfg \
-    libwpa_client \
     hostapd \
+    libwcnss_qmi \
+    libwifi-hal-qcom \
     dhcpcd.conf \
+    macloader \
+    wcnss_service \
     wificond \
     wifilogd \
     wpa_supplicant \
