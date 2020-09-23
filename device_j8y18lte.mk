@@ -433,6 +433,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.sys.sdcardfs=false
 
+# Doze
+PRODUCT_PACKAGES += \
+    SamsungDoze
 
 # For userdebug builds
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
