@@ -1,5 +1,5 @@
 USE_CAMERA_STUB := true
-
+WITHOUT_CHECK_API := true
 # inherit from the proprietary version
 -include vendor/samsung/j8y18lte/BoardConfigVendor.mk
 DEVICE_PATH := device/samsung/j8y18lte
