@@ -171,6 +171,9 @@ PRODUCT_PACKAGES += \
     libOmxVidEnc \
     libOmxVdpp
 
+PRODUCT_PACKAGES += \
+    android.hardware.media.omx@1.0-service
+
 # Seccomp policy
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/seccomp_policy/mediacodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
@@ -181,9 +184,7 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
     android.hardware.audio@2.0-service \
     android.hardware.audio.effect@2.0-impl \
-    android.hardware.audio.effect@2.0-service \
     android.hardware.soundtrigger@2.0-impl \
-    android.hardware.soundtrigger@2.0-service \
     audio.a2dp.default \
     audio.primary.msm8953 \
     audio.r_submix.default \
@@ -216,7 +217,7 @@ PRODUCT_PACKAGES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.0-impl \
+    android.hardware.bluetooth@1.0-impl-qti \
     javax.btobex \
     libbt-vendor
 
@@ -247,7 +248,7 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@2.0-impl \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
-    copybit.msm8953 \
+    gralloc.default \
     gralloc.msm8953 \
     hwcomposer.msm8953 \
     memtrack.msm8953 \
@@ -263,7 +264,8 @@ PRODUCT_PACKAGES += \
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
-    android.hardware.drm@1.0-service
+    android.hardware.drm@1.0-service \
+    android.hardware.drm@1.0-service.widevine
 
 
 # Ebtables
@@ -282,7 +284,6 @@ PRODUCT_PACKAGES += \
 # GPS
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl \
-    gps.msm8953 \
     libcurl \
     libgnss \
     libgnsspps
@@ -301,7 +302,8 @@ PRODUCT_COPY_FILES += \
 ###
 # Connectivity Engine support
 PRODUCT_PACKAGES += \
-    libcnefeatureconfig
+    libcnefeatureconfig \
+    android.hardware.broadcastradio@1.0-impl
 
 # IPA Manager
 PRODUCT_PACKAGES += \
@@ -340,7 +342,8 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-service-qti
+    android.hardware.power@1.0-service \
+    android.hardware.power@1.0-impl
 
 # Keymaster
 PRODUCT_PACKAGES += \
@@ -375,7 +378,8 @@ PRODUCT_PACKAGES += \
 # Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl \
-    android.hardware.vibrator@1.0-service
+    android.hardware.vibrator@1.0-service \
+    vibrator.default
 
 # Health HAL
 PRODUCT_PACKAGES += \
@@ -390,6 +394,7 @@ PRODUCT_PACKAGES += \
 # Lights
 PRODUCT_PACKAGES += \
 	android.hardware.light@2.0-impl \
+	android.hardware.light@2.0-service \
     lights.msm8953.so
 
 # Wifi
@@ -409,8 +414,13 @@ PRODUCT_PACKAGES += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.0-service
+    android.hardware.usb@1.0-service32
 
+
+
+# Fingerprint
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint@2.1-service
 
 PRODUCT_ENFORCE_RRO_TARGETS := \
     Bluetooth \
@@ -447,6 +457,11 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	persist.sys.usb.config=mtp,adb
+
+# VNDK
+PRODUCT_PACKAGES += \
+    vndk-sp
+
 
 # GC Tweaks 
 PRODUCT_TAGS += dalvik.gc.type-precise
