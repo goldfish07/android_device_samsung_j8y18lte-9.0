@@ -15,7 +15,7 @@ TARGET_CPU_SMP := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
 
 TARGET_BOOTLOADER_BOARD_NAME := MSM8953
-
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno506
 
 TARGET_BOARD_SUFFIX := _64
 TARGET_USES_64_BIT_BINDER := true
@@ -163,10 +163,6 @@ TARGET_RECOVERY_DEVICE_MODULES := libinit_msm8953
 # Samsung
 BOARD_VENDOR := samsung
 
-# Lineage Hardware
-BOARD_HARDWARE_CLASS += \
-    $(DEVICE_PATH)/lineagehw
-
 # charger
 WITH_LINEAGE_CHARGER := false
 
@@ -178,7 +174,6 @@ TARGET_PROVIDES_LIBLIGHT := true
 
 # Media
 TARGET_USES_MEDIA_EXTENSIONS := true
-
 
 
 # Peripheral manager
