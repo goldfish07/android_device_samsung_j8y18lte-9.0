@@ -44,7 +44,7 @@ PRODUCT_COPY_FILES += \
 
 # IRQ
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/irq//msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
+    $(DEVICE_PATH)/configs/irq/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
 
 # IRSC
 PRODUCT_COPY_FILES += \
@@ -114,6 +114,8 @@ PRODUCT_COPY_FILES += \
     hardware/qcom/audio-caf/msm8996/configs/msm8953/audio_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy.conf
 
 PRODUCT_COPY_FILES += \
+    hardware/qcom/audio-caf/msm8996/configs/msm8953/audio_tuning_mixer.txt:$(TARGET_COPY_OUT_VENDOR)/etc/audio_tuning_mixer.txt \
+    hardware/qcom/audio-caf/msm8996/configs/msm8953/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml \
     hardware/qcom/audio-caf/msm8996/configs/msm8953/mixer_paths_mtp.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_mtp.xml \
     hardware/qcom/audio-caf/msm8996/configs/msm8953/mixer_paths_qrd_sku3.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_qrd_sku3.xml \
     hardware/qcom/audio-caf/msm8996/configs/msm8953/mixer_paths_qrd_skuh.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_qrd_skuh.xml \
@@ -129,7 +131,6 @@ PRODUCT_COPY_FILES += \
 
 # XML Audio configuration files
 PRODUCT_COPY_FILES += \
-    hardware/qcom/audio-caf/msm8996/configs/msm8953/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
