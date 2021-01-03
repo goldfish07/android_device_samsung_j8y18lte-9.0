@@ -167,7 +167,7 @@ extern "C" const char * radioStateToString(RIL_RadioState);
 extern "C" const char * rilSocketIdToString(RIL_SOCKET_ID socket_id);
 
 extern "C"
-char rild[MAX_SOCKET_NAME_LENGTH] = SOCKET_NAME_RIL;
+char rild[MAX_SERVICE_NAME_LENGTH] = SOCKET_NAME_RIL;
 /*******************************************************************/
 
 RIL_RadioFunctions s_callbacks = {0, NULL, NULL, NULL, NULL, NULL};
@@ -401,7 +401,7 @@ static char * RIL_getRilSocketName() {
 
 extern "C"
 void RIL_setRilSocketName(const char * s) {
-    strncpy(rild, s, MAX_SOCKET_NAME_LENGTH);
+    strncpy(rild, s, MAX_SERVICE_NAME_LENGTH);
 }
 
 static char *
