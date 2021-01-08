@@ -954,7 +954,7 @@ service profiler_daemon /system/bin/profiler_daemon
 service charger /charger
     class charger
     group system graphics
-    seclabel u:r:healthd:s0
+    #seclabel u:r:healthd:s0
 
 service ssr_diag /system/vendor/bin/ssr_diag
     class late_start
@@ -1128,7 +1128,7 @@ on property:ro.multisim.simslotcount=2
 # umount service
 service umount_service /system/bin/umount -D /preload
     disabled
-    seclabel u:r:umount_service:s0
+    #seclabel u:r:umount_service:s0
     oneshot
 
 # Support Preload install apks
