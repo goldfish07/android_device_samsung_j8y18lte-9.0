@@ -224,6 +224,14 @@ on boot
     chown system system /sys/class/sensors/apds9930-proximity/enable
     chown system system /sys/class/sensors/apds9930-proximity/poll_delay
 
+    # sensor settings
+    chmod 775 /persist/sensors
+    chmod 664 /persist/sensors/sensors_settings
+    chown system root /persist/sensors/sensors_settings
+    mkdir /data/misc/sensors 775 system root
+
+    start sensors
+
     # Create directory used for display
     mkdir /persist/display 0770 system graphics
 
