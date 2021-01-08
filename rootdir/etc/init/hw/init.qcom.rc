@@ -37,6 +37,10 @@ on early-init
     chown root system /dev/kmsg
     chmod 0620 /dev/kmsg
 
+
+    # Wifi firmware reload path
+    chown wifi wifi /sys/module/wlan/parameters/fwpath
+
 on init
     # Set permissions for persist partition
     mkdir /persist 0771 root system
