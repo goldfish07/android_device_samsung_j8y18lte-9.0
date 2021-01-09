@@ -31,7 +31,8 @@ PRODUCT_PACKAGES += \
     init.qcom.test.rc \
     init.qcom.usb.rc \
     init.target.rc \
-    ueventd.qcom.rc 
+    ueventd.qcom.rc \
+    init.rilchip
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
