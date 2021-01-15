@@ -124,11 +124,6 @@ service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
 on init
    write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
 
-service qfp-daemon /system/vendor/bin/qfp-daemon
-   class late_start
-   user system
-   group system drmrpc
-
 # Allow usb charging to be disabled peristently
 on property:persist.usb.chgdisabled=1
     write /sys/class/power_supply/battery/charging_enabled 0
@@ -136,10 +131,6 @@ on property:persist.usb.chgdisabled=1
 on property:persist.usb.chgdisabled=0
     write /sys/class/power_supply/battery/charging_enabled 1
 
-service qrngd /system/bin/qrngd -f
-   class main
-   user root
-   group root
 
 service qrngp /system/bin/qrngp -f
    class main
@@ -190,11 +181,6 @@ service time_daemon /system/vendor/bin/time_daemon
    class late_start
    user root
    group root readproc
-
-service audiod /system/vendor/bin/audiod
-   class late_start
-   user system
-   group system
 
 on boot
     start rmt_storage
@@ -257,11 +243,6 @@ service wcnss-service /system/vendor/bin/wcnss_service
     group system wifi radio
     oneshot
 
-service imsqmidaemon /system/vendor/bin/imsqmidaemon
-    class main
-    user system
-    socket ims_qmid stream 0660 system radio
-    group radio log diag
 
 service imsdatadaemon /system/vendor/bin/imsdatadaemon
     class main
@@ -327,11 +308,6 @@ on charger
     setprop sys.usb.configfs 0
     start qcom-post-boot
 
-service dts_configurator /system/vendor/bin/dts_configurator
-    class late_start
-    user system
-    group media audio
-    oneshot
 
 service dtseagleservice /system/vendor/bin/dts_eagle_service
     class late_start
@@ -370,11 +346,6 @@ service energy-awareness /system/vendor/bin/energy-awareness
     user root
     group system
     oneshot
-
-service mdtpd /system/vendor/bin/mdtpd
-    class late_start
-    user root
-    group system radio drmrpc
 
 on boot
     write /sys/devices/soc.0/78b8000.i2c/i2c-4/4-0020/input/input0/fw_name PR1702898-s3528t_00260005_00380008.img

@@ -464,11 +464,6 @@ on post-fs-data
 	chmod 0770 /persist/coresight/qdss.functions.sh
 
 
-service qcomsysd /system/vendor/bin/qcom-system-daemon
-    class main
-    user root
-    group root diag
-
 service ssr_setup /system/vendor/bin/ssr_setup
     oneshot
     disabled
@@ -567,16 +562,6 @@ on property:vold.decrypt=trigger_restart_framework
 on property:persist.env.fastdorm.enabled=true
     setprop persist.radio.data_no_toggle 1
 
-service cnd /system/vendor/bin/cnd
-    class main
-    user system
-    group system wifi inet radio wakelock net_admin
-
-service dpmQmiMgr /system/vendor/bin/dpmQmiMgr
-    class main
-    user system
-    group system
-
 service irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
     class core
     user root
@@ -667,12 +652,6 @@ service qmiproxy /system/bin/qmiproxy
     group radio diag
     disabled
 
-# QMUX must be in multiple groups to support external process connections
-service qmuxd /system/vendor/bin/qmuxd
-    class main
-    user root
-    group radio audio bluetooth gps diag
-
 service netmgrd /system/vendor/bin/netmgrd
     class main
     user root
@@ -695,11 +674,6 @@ service qti /system/vendor/bin/qti
     group radio oem_2901 diag usb net_admin
     disabled
 
-service sensors /vendor/bin/sensors.qcom
-    class core
-    user root
-    group root
-    disabled
 
 on property:ro.use_data_netmgrd=false
     # netmgr not supported on specific target
@@ -826,18 +800,6 @@ service cnss-daemon /system/vendor/bin/cnss-daemon -n -l
 on property:sys.shutdown.requested=*
     stop cnss-daemon
 
-service ssgqmigd /vendor/bin/ssgqmigd
-    class late_start
-    user radio
-    group radio
-    socket ssgqmig seqpacket 0660 radio inet
-
-service mlid /vendor/bin/mlid
-    class late_start
-    user gps
-    group gps
-    socket mlid stream 0666 gps gps
-
 service loc_launcher /system/vendor/bin/loc_launcher
     #loc_launcher will start as root and set its uid to gps
     class late_start
@@ -894,11 +856,6 @@ service wifi-crda /vendor/bin/init.crda.sh
 
 on property:sys.boot_completed=1
     start qcom-post-boot
-
-service qvop-daemon /vendor/bin/qvop-daemon
-    class late_start
-    user system
-    group system drmrpc
 
 service atfwd /vendor/bin/ATFWD-daemon
     class late_start
@@ -1050,16 +1007,6 @@ service vendor.LKCore-rel /vendor/bin/LKCore
     user system
     group system log diag
 
-service qseeproxydaemon /system/vendor/bin/qseeproxydaemon
-    class late_start
-    user system
-    group system
-
-service esepmdaemon /system/vendor/bin/esepmdaemon
-    class core
-    user system
-    group nfc
-
 on charger
 #    setprop persist.sys.usb.config mass_storage
     load_system_props
@@ -1093,24 +1040,9 @@ service time_daemon /system/vendor/bin/time_daemon
     user root
     group root readproc
 
-service qdmastatsd /system/vendor/bin/qdmastatsd
-    class late_start
-    user system
-    group readproc system net_bw_stats radio
-
-service vppservice /vendor/bin/vppservice
-    class main
-    user media
-    group camera
-
 # Set vendor-ril lib path based on Meta version
 on property:vendor.rild.libpath=*
     setprop rild.libpath ${vendor.rild.libpath}
-
-service seemp_healthd /vendor/bin/seemp_healthd
-    class late_start
-    user system
-    group system
 
 service power_off_alarm /vendor/bin/power_off_alarm
     class core
