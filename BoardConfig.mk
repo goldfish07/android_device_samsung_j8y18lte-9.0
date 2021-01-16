@@ -165,8 +165,10 @@ TARGET_USES_INTERACTION_BOOST := true
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_USE_SDCLANG := true
 
-# Lights
-TARGET_PROVIDES_LIBLIGHT := true
+#QCOM FM
+AUDIO_FEATURE_ENABLED_FM := true
+BOARD_HAVE_QCOM_FM := true
+>>>>>>> parent of 69a80ac (j8y18lte: board: add samsung liblights)
 
 # RIL
 BOARD_PROVIDES_LIBRIL := true
