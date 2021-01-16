@@ -421,6 +421,7 @@ PRODUCT_PACKAGES += \
     hostapd \
     libwcnss_qmi \
     libcld80211 \
+    libwpa_client \
     libwifi-hal-qcom \
     dhcpcd.conf \
     macloader \
