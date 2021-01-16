@@ -420,6 +420,7 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
     hostapd \
     libwcnss_qmi \
+    libcld80211 \
     libwifi-hal-qcom \
     dhcpcd.conf \
     macloader \
