@@ -326,11 +326,6 @@ PRODUCT_PACKAGES += \
     libcnefeatureconfig \
     android.hardware.broadcastradio@1.0-impl
 
-# IPA Manager
-PRODUCT_PACKAGES += \
-    ipacm \
-    IPACM_cfg.xml
-
 # IPv6
 PRODUCT_PACKAGES += \
     ebtables \
