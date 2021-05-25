@@ -13,6 +13,7 @@ TARGET_CPU_VARIANT := cortex-a53
 
 TARGET_BOOTLOADER_BOARD_NAME := MSM8953
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno506
+BOARD_VENDOR := samsung
 
 TARGET_BOARD_SUFFIX := _64
 TARGET_USES_64_BIT_BINDER := true
@@ -55,7 +56,6 @@ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_COPY_OUT_VENDOR := vendor
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 PRODUCT_FULL_TREBLE_OVERRIDE := true
-PRODUCT_COMPATIBILITY_MATRIX_LEVEL_OVERRIDE := 27
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
@@ -73,14 +73,10 @@ BOARD_HAVE_BLUETOOTH_QCOM := true
 QCOM_BT_USE_BTNV := true
 QCOM_BT_USE_SMD_TTY := true
 
-
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
 BOARD_QTI_CAMERA_32BIT_ONLY := true
 TARGET_TS_MAKEUP := true
-
-# GPS
-USE_DEVICE_SPECIFIC_GPS := true
 
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
@@ -94,6 +90,9 @@ ENABLE_CPUSETS := true
 
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
+
+# charger
+WITH_LINEAGE_CHARGER := false
 
 # Dexpreopt
 ifeq ($(HOST_OS),linux)
@@ -125,7 +124,6 @@ VSYNC_EVENT_PHASE_OFFSET_NS := 2000000
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 USE_OPENGL_RENDERER := true
 
-
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
@@ -133,25 +131,16 @@ TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
 DEVICE_MATRIX_FILE   := $(DEVICE_PATH)/compatibility_matrix.xml
 
-
-
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_msm8953
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
 TARGET_RECOVERY_DEVICE_MODULES := libinit_msm8953
-
-# Samsung
-BOARD_VENDOR := samsung
-
-# charger
-WITH_LINEAGE_CHARGER := false
 
 # Keymaster
 TARGET_PROVIDES_KEYMASTER := true
 
 # Media
 TARGET_USES_MEDIA_EXTENSIONS := true
-
 
 # Peripheral manager
 TARGET_PER_MGR_ENABLED := true
@@ -166,14 +155,9 @@ TARGET_USE_SDCLANG := true
 
 # RIL
 BOARD_PROVIDES_LIBRIL := true
-BOARD_RIL_CLASS := $(DEVICE_PATH)/ril
-TARGET_RIL_VARIANT := caf
 
-
-# Shims
-TARGET_LD_SHIM_LIBS := \
-	/system/lib/libsec-ril.so|libshims_rild_socket.so \
- 	/system/lib/libsec-ims.so|libsec-ims_shim.so
+# Recovery
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 
 # Protobuf
 PROTOBUF_SUPPORTED := true
@@ -181,20 +165,13 @@ PROTOBUF_SUPPORTED := true
 # Peripheral manager
 TARGET_PER_MGR_ENABLED := true
 
-# Vold
-BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS := true
-BOARD_VOLD_MAX_PARTITIONS := 67
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
-
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 include device/qcom/sepolicy/legacy-sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
-#include
-TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
-
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
+# USB
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
 
 # Wi-Fi
 BOARD_HAVE_SAMSUNG_WIFI := true
