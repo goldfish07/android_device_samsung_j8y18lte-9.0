@@ -157,7 +157,7 @@ TARGET_USE_SDCLANG := true
 BOARD_PROVIDES_LIBRIL := true
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.recovery.qcom
 
 # Protobuf
 PROTOBUF_SUPPORTED := true
@@ -172,6 +172,11 @@ BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 # USB
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
+
+# VNDK
+BOARD_VNDK_VERSION := current
+PRODUCT_USE_VNDK_OVERRIDE := false
+BOARD_VNDK_RUNTIME_DISABLE := true
 
 # Wi-Fi
 BOARD_HAVE_SAMSUNG_WIFI := true
