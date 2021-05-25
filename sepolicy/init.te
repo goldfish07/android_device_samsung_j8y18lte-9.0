@@ -1,2 +1,1 @@
-allow init fingerprintd_device:chr_file setattr;
-
+allow init omr_file:dir mounton;
