@@ -1,7 +1,7 @@
 #blobs for j8y18lte
 
 vendor/app/mcRegistry/07010000000000000000000000000000.tlbin
-vendor/app/TimeService/TimeService.apk
+#vendor/app/TimeService/TimeService.apk
 
 #vendor/bin/hw/android.hardware.audio@2.0-service
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
