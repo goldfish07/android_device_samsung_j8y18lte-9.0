@@ -299,11 +299,7 @@ PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
 
 PRODUCT_ENFORCE_RRO_TARGETS := \
-    Bluetooth \
-    Settings \
-    SettingsProvider \
-    SystemUI \
-    framework-res \
+    framework-res
 
 # USB debugging
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
